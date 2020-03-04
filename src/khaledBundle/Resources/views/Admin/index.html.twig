@@ -1,0 +1,304 @@
+{% include 'back/headerAdmin.html.twig' %}
+
+
+
+
+            <!-- start: page -->
+            <div class="row">
+                <div class="col-md-6 col-lg-12 col-xl-6">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="chart-data-selector ready" id="salesSelectorWrapper">
+                                        <h2>
+                                            Sales
+                                        </h2>
+
+                                        <div id="salesSelectorItems" class="chart-data-selector-items mt-sm">
+                                            <!-- Flot: Sales Porto Admin -->
+                                            <div class="chart chart-sm chart-active" data-sales-rel="Porto Admin" id="flotDashSales1" style="padding: 0px;"><canvas class="flot-base" width="520" height="230" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 416px; height: 184px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 27px; text-align: center;">Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 78px; text-align: center;">Feb</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 130px; text-align: center;">Mar</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 184px; text-align: center;">Apr</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 235px; text-align: center;">May</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 291px; text-align: center;">Jun</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 346px; text-align: center;">Jul</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 396px; text-align: center;">Aug</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 13px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 101px; left: 1px; text-align: right;">100</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 68px; left: 1px; text-align: right;">200</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 34px; left: 1px; text-align: right;">300</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 1px; text-align: right;">400</div></div></div><canvas class="flot-overlay" width="520" height="230" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 416px; height: 184px;"></canvas></div>
+                                            <script>
+
+                                                var flotDashSales1Data = [{
+                                                    data: [
+                                                        ["Jan", {{ mounths[0]|length }}],
+                                                        ["Feb", {{ mounths[01]|length }}],
+                                                        ["Mar", {{ mounths[02]|length }}],
+                                                        ["Apr", {{ mounths[03]|length }}],
+                                                        ["May", {{ mounths[04]|length }}],
+                                                        ["Jun", {{ mounths[05]|length }}],
+                                                        ["Jul", {{ mounths[06]|length }}],
+                                                        ["Aug", {{ mounths[07]|length }}],
+                                                        ["Sep", {{ mounths[08]|length }}],
+                                                        ["Oct", {{ mounths[09]|length }}],
+                                                        ["Nov", {{ mounths[10]|length }}],
+                                                        ["Dec", {{ mounths[011]|length }}],
+
+
+                                                    ],
+                                                    color: "#0088cc"
+                                                }];
+
+                                                // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
+
+                                            </script>
+
+                                            <!-- Flot: Sales Porto Drupal -->
+                                            <div class="chart chart-sm chart-hidden" data-sales-rel="Porto Drupal" id="flotDashSales2" style="padding: 0px;"><canvas class="flot-base" width="520" height="230" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 416px; height: 184px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 27px; text-align: center;">Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 78px; text-align: center;">Feb</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 130px; text-align: center;">Mar</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 184px; text-align: center;">Apr</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 235px; text-align: center;">May</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 291px; text-align: center;">Jun</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 346px; text-align: center;">Jul</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 396px; text-align: center;">Aug</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 13px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 113px; left: 1px; text-align: right;">100</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 90px; left: 1px; text-align: right;">200</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 68px; left: 1px; text-align: right;">300</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 45px; left: 1px; text-align: right;">400</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 23px; left: 1px; text-align: right;">500</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 1px; text-align: right;">600</div></div></div><canvas class="flot-overlay" width="520" height="230" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 416px; height: 184px;"></canvas></div>
+                                            <script>
+
+                                                var flotDashSales2Data = [{
+                                                    data: [
+                                                        ["Jan", 240],
+                                                        ["Feb", 240],
+                                                        ["Mar", 290],
+                                                        ["Apr", 540],
+                                                        ["May", 480],
+                                                        ["Jun", 220],
+                                                        ["Jul", 170],
+                                                        ["Aug", 190]
+                                                    ],
+                                                    color: "#2baab1"
+                                                }];
+
+                                                // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
+
+                                            </script>
+
+                                            <!-- Flot: Sales Porto Wordpress -->
+                                            <div class="chart chart-sm chart-hidden" data-sales-rel="Porto Wordpress" id="flotDashSales3" style="padding: 0px;"><canvas class="flot-base" width="520" height="230" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 416px; height: 184px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 34px; text-align: center;">Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 84px; text-align: center;">Feb</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 135px; text-align: center;">Mar</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 188px; text-align: center;">Apr</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 238px; text-align: center;">May</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 293px; text-align: center;">Jun</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 347px; text-align: center;">Jul</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 86px; top: 161px; left: 396px; text-align: center;">Aug</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 20px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 108px; left: 8px; text-align: right;">250</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 81px; left: 8px; text-align: right;">500</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 54px; left: 8px; text-align: right;">750</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 27px; left: 1px; text-align: right;">1000</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 1px; text-align: right;">1250</div></div></div><canvas class="flot-overlay" width="520" height="230" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 416px; height: 184px;"></canvas></div>
+                                            <script>
+
+                                                var flotDashSales3Data = [{
+                                                    data: [
+                                                        ["Jan", 840],
+                                                        ["Feb", 740],
+                                                        ["Mar", 690],
+                                                        ["Apr", 940],
+                                                        ["May", 1180],
+                                                        ["Jun", 820],
+                                                        ["Jul", 570],
+                                                        ["Aug", 780]
+                                                    ],
+                                                    color: "#734ba9"
+                                                }];
+
+                                                // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
+
+                                            </script>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <h2 class="panel-title mt-md">Sales Goal</h2>
+                                    <div class="liquid-meter-wrapper liquid-meter-sm mt-lg">
+                                        <div class="liquid-meter liquid-meter-loaded">
+                                            <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 220 220" width="100%" height="100%">
+                                                <desc>Created with Snap</desc>
+                                                <defs>
+                                                    <linearGradient x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse" id="Sk3zz4das2">
+                                                        <stop offset="0%" stop-color="#ffffff">
+
+                                                        </stop>
+                                                        <stop offset="100%" stop-color="#f9f9f9">
+
+                                                        </stop>
+                                                    </linearGradient>
+                                                    <mask id="Sk3zz4das8">
+                                                        <circle cx="110" cy="110" r="87" fill="#ffffff" style="">
+
+                                                        </circle>
+                                                    </mask>
+                                                </defs>
+
+                                                <path id="front" fill="#0088cc" mask="url('#Sk3zz4das8')" stroke="#33bbff" style="stroke-width: 1;" d="M0,151.4 C120.4,159.4 173.4,158.4 220,149.4 L220,220 L0,220 z"></path><text x="50%" y="50%" fill="#333333" dy=".4em" stroke="#333333" style="font-family: &quot;Open Sans&quot; font-size: 24px; font-weight: 600; text-anchor: middle;"><tspan>35</tspan><tspan stroke="none" style="font-size: 24px;">%</tspan></text></svg>
+                                            <meter  min="0" max="100" value="{{ (p|length/all|length) * 100 }}" id="meterSales"></meter>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-6 col-lg-12 col-xl-6">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                            <section class="panel panel-featured-left panel-featured-primary">
+                                <div class="panel-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-primary">
+                                                <i class="fa fa-life-ring"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Support Questions</h4>
+                                                <div class="info">
+                                                    <strong class="amount">1281</strong>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                            <section class="panel panel-featured-left panel-featured-secondary">
+                                <div class="panel-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-secondary">
+                                                <i class="fa fa-usd"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Total Profit</h4>
+                                                <div class="info">
+                                                    {% set i = 0 %}
+                                                    {% for o in p %}
+                                                        {% set i = o.price + i %}
+                                                    {% endfor %}
+
+                                                    <strong class="amount"> {{ i }}</strong>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                            <section class="panel panel-featured-left panel-featured-tertiary">
+                                <div class="panel-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-tertiary">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Today's Orders</h4>
+                                                <div class="info">
+                                                    <strong class="amount">559</strong>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-6">
+                            <section class="panel panel-featured-left panel-featured-quartenary">
+                                <div class="panel-body">
+                                    <div class="widget-summary">
+                                        <div class="widget-summary-col widget-summary-col-icon">
+                                            <div class="summary-icon bg-quartenary">
+                                                <i class="fa fa-user"></i>
+                                            </div>
+                                        </div>
+                                        <div class="widget-summary-col">
+                                            <div class="summary">
+                                                <h4 class="title">Today's Visitors</h4>
+                                                <div class="info">
+                                                    <strong class="amount"></strong>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- end: page -->
+        </section>
+    </div>
+
+    <aside id="sidebar-right" class="sidebar-right">
+        <div class="nano has-scrollbar">
+            <div class="nano-content" tabindex="0" style="right: -14px;">
+                <a href="#" class="mobile-close visible-xs">
+                    Collapse <i class="fa fa-chevron-right"></i>
+                </a>
+
+                <div class="sidebar-right-wrapper">
+
+                    <div class="sidebar-widget widget-calendar">
+                        <h6>Upcoming Tasks</h6>
+                        <div data-plugin-datepicker="" data-plugin-skin="dark"><div class="datepicker datepicker-inline datepicker-dark"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;">«</th><th colspan="5" class="datepicker-switch">December 2019</th><th class="next" style="visibility: visible;">»</th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="old day">24</td><td class="old day">25</td><td class="old day">26</td><td class="old day">27</td><td class="old day">28</td><td class="old day">29</td><td class="old day">30</td></tr><tr><td class="day">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td></tr><tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day">13</td><td class="day">14</td></tr><tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr><tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr><tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td class="new day">1</td><td class="new day">2</td><td class="new day">3</td><td class="new day">4</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;">«</th><th colspan="5" class="datepicker-switch">2019</th><th class="next" style="visibility: visible;">»</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;">«</th><th colspan="5" class="datepicker-switch">2010-2019</th><th class="next" style="visibility: visible;">»</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year new">2020</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div></div></div>
+
+                        <ul>
+                            <li>
+                                <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+                                <span>Company Meeting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget widget-friends">
+                        <h6>Friends</h6>
+                        <ul>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="nano-pane" style="display: none; opacity: 1; visibility: visible;"><div class="nano-slider" style="height: 708px; transform: translate(0px, 0px);"></div></div></div>
+    </aside>
+</section>
+<script>
+    //$('#meterSales').val(85);
+</script>
+{% include 'back/footerAdmin.html.twig' %}
