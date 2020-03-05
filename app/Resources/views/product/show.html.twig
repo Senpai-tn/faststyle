@@ -57,14 +57,18 @@
                                     success: function(data, status) {
                                         if(data == 'found')
                                         {
-
+                                            Swal.fire(
+                                                'Error',
+                                                'This product is in your cart already',
+                                                'error'
+                                            )
                                         }
                                         else
                                         {
                                             $("#loadstudent").attr("disabled", true);
                                             Swal.fire(
                                                 'Good job!',
-                                                'You clicked the button!',
+                                                'This product is added to your cart',
                                                 'success'
                                             )
                                         }

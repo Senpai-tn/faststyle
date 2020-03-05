@@ -40,7 +40,7 @@
                                 <td>{% if order.orderDate %}{{ order.orderDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                                 <td class="actions-hover actions-fade">
                                     <a href="#" class="promote" data-resource="{{ order.id }}" data-action="done"><i class="fa  fa-check-square-o"></i></a>
-                                    <a href="#" class="delete-row"><i class="fa fa-trash-o"></i></a>
+                                    <a href="#" class="delete-row" data-resource="{{ order.id }}" data-action="delete"><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
                     {% endfor %}
@@ -60,6 +60,25 @@
 
 
         $('.promote').click(function(){
+            $.ajax({
+                url:        '/Admin/new_orders',
+                type:       'GET',
+
+                data: {id: $(this).attr('data-resource'),action: $(this).attr('data-action')},
+                async:      true,
+                dataType: "text",
+                async: true,
+                success: function(data) {
+                    alert("order "+data+" is set as Done");
+                    $('#'+data).hide();
+                },
+                error : function(xhr, textStatus, errorThrown) {
+                    alert('Ajax request failed.');
+                }
+            });
+        });
+
+        $('.delete-row').click(function(){
             $.ajax({
                 url:        '/Admin/new_orders',
                 type:       'GET',

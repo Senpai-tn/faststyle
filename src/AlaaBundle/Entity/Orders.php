@@ -28,6 +28,12 @@ class Orders
      */
     private $idUser;
 
+
+
+
+
+
+
     /**
      * @var int
      *
@@ -45,7 +51,7 @@ class Orders
     /**
      * @var bool
      *
-     * @ORM\Column(name="deliverd", type="boolean")
+     * @ORM\Column(name="deliverd", type="integer")
      */
     private $deliverd;
 

@@ -305,6 +305,22 @@ class DefaultController extends Controller
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($order);
                     $em->flush();
+                    $p = $order->getIdProduct();
+                    $product = $em->getRepository(Product::class)->find($p);
+                    $product->setState(1);
+                    $em->persist($product);
+                    $em->flush();
+
+                    return new Response($id);
+                }
+
+                if ($action=="delete")
+                {
+                    $em = $this->getDoctrine()->getManager();
+                    $order = $em->getRepository('AlaaBundle:Orders')->find($id);
+                    $order->setdeliverd(2);
+                    $em->persist($order);
+                    $em->flush();
 
                     return new Response($id);
                 }
@@ -565,16 +581,22 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($o);
             $em->flush();
-            var_dump($o);
+            $cart = $em->getRepository(Cart::class)->findBy(["idUser"=>$user->getId(),"idProduct"=>$p['id']]);
+            foreach ( $cart as $c)
+            {
+                $em->remove($c);
+                $em->flush();
+            }
+
+            //var_dump($o);
             if ($p['promotion']>0)
                 $total=$total+($p['price']-(($p['price']*$p['promotion'])/100));
             else
                 $total=$total+($p['price']);
 
         }
-        return $this->render('AlaaBundle:Default:OrderPlaced.html.twig', array(
-            'cart' => $produit,'total'=>$total
-        ));
+        return $this->redirectToRoute("index");
+
     }
 
 

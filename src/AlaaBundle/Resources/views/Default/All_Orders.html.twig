@@ -31,27 +31,27 @@
                     </thead>
                     <tbody>
                     {% for order in orders %}
-                        {% if order.deliverd  %}
+                        {% if order.deliverd == 1  %}
                             <tr class="success">
-                                <td>{{ order.id }}</td>
-                                <td><img alt="" class="img-responsive" height="42" width="42" src="{{ asset('uploads/imagesProduit/') }}{{ order.image }}"></td>
-                                <th>{{ order.username }}</th>
-                                <th>{{ order.title }}</th>
-                                <th>{{ order.price }}</th>
-                                <td>{% if order.orderDate %}{{ order.orderDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                            </tr>
-                        {% else %}
+                        {% elseif order.deliverd == 0 %}
                             <tr class="warning">
+                        {% else %}
+                            <tr class="danger">
+                        {% endif %}
                                 <td>{{ order.id }}</td>
                                 <td><img alt="" class="img-responsive" height="42" width="42" src="{{ asset('uploads/imagesProduit/') }}{{ order.image }}"></td>
                                 <th>{{ order.username }}</th>
                                 <th>{{ order.title }}</th>
                                 <th>{{ order.price }}</th>
-                                <td>{% if order.orderDate %}{{ order.orderDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                <td>{% if order.orderDate %}{{ order.orderDate|date('Y-m-d') }}{% endif %}</td>
                             </tr>
 
 
-                        {% endif %}
+
+
+
+
+
 
 
                     {% endfor %}
